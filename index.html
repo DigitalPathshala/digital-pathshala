@@ -13,27 +13,124 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: transparent;
+            background: #000; /* Set to black for the star background */
             color: #ffffff;
             overflow-x: hidden;
             line-height: 1.7;
         }
 
-        /* Floating Glassmorphism Navbar */
+        /* --- INTEGRATED BACKGROUND CODE --- */
+        .container {
+            position: fixed; /* Changed to fixed so it stays behind content */
+            inset: 0;
+            z-index: -1; /* Keep it behind everything */
+            overflow: hidden;
+            background: #000;
+        }
+
+        .container::before {
+            content: "";
+            position: absolute;
+            inset: -145%;
+            rotate: -45deg;
+            background: #000000;
+            background-image: radial-gradient(4px 100px at 0px 235px, rgb(255, 140, 17), #0000),
+                radial-gradient(4px 100px at 300px 235px, rgb(255, 119, 0), #884e2800),
+                radial-gradient(1.5px 1.5px at 150px 117.5px, rgb(255, 144, 9) 100%, #0000 150%),
+                radial-gradient(4px 100px at 0px 252px, rgb(156, 14, 137), #0000),
+                radial-gradient(4px 100px at 300px 252px, rgb(23, 41, 206), #0000),
+                radial-gradient(1.5px 1.5px at 150px 126px, rgb(247, 102, 18) 100%, #0000 150%),
+                radial-gradient(4px 100px at 0px 150px, rgb(249, 121, 16), #0000),
+                radial-gradient(4px 100px at 300px 150px, rgb(255, 128, 18), #0000),
+                radial-gradient(1.5px 1.5px at 150px 75px, rgb(255, 116, 10) 100%, #0000 150%),
+                radial-gradient(4px 100px at 0px 253px, rgb(249, 137, 17), #0000),
+                radial-gradient(4px 100px at 300px 253px, rgb(248, 107, 14), #0000),
+                radial-gradient(1.5px 1.5px at 150px 126.5px, rgb(252, 129, 14) 100%, #0000 150%),
+                radial-gradient(4px 100px at 0px 204px, rgb(234, 115, 18), #0000),
+                radial-gradient(4px 100px at 300px 204px, rgb(255, 139, 6), #0000),
+                radial-gradient(1.5px 1.5px at 150px 102px, rgb(255, 128, 9) 100%, #0000 150%),
+                radial-gradient(4px 100px at 0px 134px, rgb(249, 133, 9), #0000),
+                radial-gradient(4px 100px at 300px 134px, rgb(251, 125, 15), #0000),
+                radial-gradient(1.5px 1.5px at 150px 67px, rgb(255, 146, 13) 100%, #0000 150%),
+                radial-gradient(4px 100px at 0px 179px, rgb(249, 137, 17), #0000),
+                radial-gradient(4px 100px at 300px 179px, rgb(253, 122, 6), #0000),
+                radial-gradient(1.5px 1.5px at 150px 89.5px, rgb(234, 132, 7) 100%, #0000 150%),
+                radial-gradient(4px 100px at 0px 299px, rgb(255, 115, 0), #0000),
+                radial-gradient(4px 100px at 300px 299px, rgb(255, 136, 0), #0000),
+                radial-gradient(1.5px 1.5px at 150px 149.5px, rgb(255, 123, 0) 100%, #0000 150%),
+                radial-gradient(4px 100px at 0px 215px, rgb(255, 145, 0), #0000),
+                radial-gradient(4px 100px at 300px 215px, rgb(255, 132, 0), #0000),
+                radial-gradient(1.5px 1.5px at 150px 107.5px, rgb(255, 136, 0) 100%, #0000 150%),
+                radial-gradient(4px 100px at 0px 281px, rgb(255, 170, 0), #0000),
+                radial-gradient(4px 100px at 300px 281px, rgb(255, 115, 0), #0000),
+                radial-gradient(1.5px 1.5px at 150px 140.5px, rgb(255, 119, 0) 100%, #0000 150%),
+                radial-gradient(4px 100px at 0px 158px, rgb(255, 123, 0), #0000),
+                radial-gradient(4px 100px at 300px 158px, rgb(255, 132, 0), #0000),
+                radial-gradient(1.5px 1.5px at 150px 79px, rgb(255, 149, 0) 100%, #0000 150%),
+                radial-gradient(4px 100px at 0px 210px, rgb(255, 123, 0), #0000),
+                radial-gradient(4px 100px at 300px 210px, rgb(255, 162, 0), #0000),
+                radial-gradient(1.5px 1.5px at 150px 105px, rgb(255, 136, 0) 100%, #0000 150%);
+            background-size: 300px 235px, 300px 235px, 300px 235px, 300px 252px, 300px 252px, 300px 252px, 300px 150px, 300px 150px, 300px 150px, 300px 253px, 300px 253px, 300px 253px, 300px 204px, 300px 204px, 300px 204px, 300px 134px, 300px 134px, 300px 134px, 300px 179px, 300px 179px, 300px 179px, 300px 299px, 300px 299px, 300px 299px, 300px 215px, 300px 215px, 300px 215px, 300px 281px, 300px 281px, 300px 281px, 300px 158px, 300px 158px, 300px 158px, 300px 210px, 300px 210px, 300px 210px;
+            animation: hi 150s linear infinite;
+        }
+
+        @keyframes hi {
+            0% { background-position: 0px 220px, 3px 220px, 151.5px 337.5px, 25px 24px, 28px 24px, 176.5px 150px, 50px 16px, 53px 16px, 201.5px 91px, 75px 224px, 78px 224px, 226.5px 350.5px, 100px 19px, 103px 19px, 251.5px 121px, 125px 120px, 128px 120px, 276.5px 187px, 150px 31px, 153px 31px, 301.5px 120.5px, 175px 235px, 178px 235px, 326.5px 384.5px, 200px 121px, 203px 121px, 351.5px 228.5px, 225px 224px, 228px 224px, 376.5px 364.5px, 250px 26px, 253px 26px, 401.5px 105px, 275px 75px, 278px 75px, 426.5px 180px; }
+            to { background-position: 0px 6800px, 3px 6800px, 151.5px 6917.5px, 25px 13632px, 28px 13632px, 176.5px 13758px, 50px 5416px, 53px 5416px, 201.5px 5491px, 75px 17175px, 78px 17175px, 226.5px 17301.5px, 100px 5119px, 103px 5119px, 251.5px 5221px, 125px 8428px, 128px 8428px, 276.5px 8495px, 150px 9876px, 153px 9876px, 301.5px 9965.5px, 175px 13391px, 178px 13391px, 326.5px 13540.5px, 200px 14741px, 203px 14741px, 351.5px 14848.5px, 225px 18770px, 228px 18770px, 376.5px 18910.5px, 250px 5082px, 253px 5082px, 401.5px 5161px, 275px 6375px, 278px 6375px, 426.5px 6480px; }
+        }
+
+        /* --- INTEGRATED HERO BUTTON CODE --- */
+        .wrapper {
+            display: inline-block;
+            border-radius: 48px;
+            box-shadow: inset 12px 0 12px rgba(255, 255, 255, 0.25), inset -2px -4px 8px rgba(255, 255, 255, 0.25);
+            background: linear-gradient(336deg, rgba(255, 196, 32, 1) 0%, rgba(254, 75, 8, 1) 39%, rgba(254, 75, 8, 1) 57%, rgba(255, 196, 32, 1) 100%);
+            transition: transform 0.2s;
+        }
+
+        .button {
+            cursor: pointer;
+            padding: 0.75rem 2.5rem; /* adjusted padding for your layout */
+            border-radius: inherit;
+            font-weight: 600;
+            font-size: 1.1rem;
+            position: relative;
+            border: none;
+            background: transparent;
+            color: #fff;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .button::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            inset-block-end: -2px;
+            border-radius: inherit;
+            background: linear-gradient(to top, #ffc42088, transparent);
+            z-index: -1;
+            filter: blur(5px);
+            transition: all 0.2s;
+        }
+
+        .button:hover::before { filter: blur(0); opacity: 0; }
+        .wrapper:active { transform: scale(0.95); }
+        .button:focus { outline: 2px solid #fff; outline-offset: 4px; }
+
+        /* --- EXISTING UI STYLES --- */
         .navbar {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             backdrop-filter: blur(25px);
-            background: rgba(10, 10, 10, 0.4);
+            background: rgba(10, 10, 10, 0.7); /* Darkened for visibility */
             border-bottom: 1px solid rgba(229, 193, 133, 0.3);
             z-index: 1000;
-            transition: all 0.3s ease;
         }
 
         .logo {
@@ -45,46 +142,14 @@
             background-clip: text;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-        }
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-links a { color: #ffffff; text-decoration: none; font-weight: 500; position: relative; transition: color 0.3s ease; }
+        .nav-links a:hover { color: #e5c185; }
 
-        .nav-links a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 500;
-            position: relative;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #e5c185, #f4d03f);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: #e5c185;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* WhatsApp Floating Button */
         .whatsapp-btn {
             position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 60px;
-            height: 60px;
+            bottom: 2rem; right: 2rem;
+            width: 60px; height: 60px;
             background: #25D366;
             border-radius: 50%;
             display: flex;
@@ -93,24 +158,17 @@
             font-size: 1.8rem;
             box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
             z-index: 999;
-            transition: all 0.3s ease;
             text-decoration: none;
         }
 
-        .whatsapp-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
-        }
-
-        /* Hero Section */
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 12rem 5% 0 5%;
+            padding: 12rem 5% 4rem 5%;
             position: relative;
         }
 
@@ -122,57 +180,29 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             margin-bottom: 1.5rem;
-            letter-spacing: -0.02em;
         }
 
         .hero .subtitle {
-            font-size: clamp(1.3rem, 3vw, 2rem);
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
             color: rgba(255, 255, 255, 0.9);
-            max-width: 600px;
-            line-height: 1.6;
+            max-width: 700px;
             margin-bottom: 3rem;
         }
 
-        .cta-button {
-            background: linear-gradient(135deg, #e5c185, #f4d03f);
-            color: #0a0a0a;
-            padding: 1.2rem 3rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 20px 40px rgba(229, 193, 133, 0.4);
-            margin-right: 1rem;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 25px 50px rgba(229, 193, 133, 0.6);
-        }
-
-        /* Coaching Image Slot 1 */
         .hero-image {
             width: 100%;
             max-width: 800px;
             height: 400px;
-            background: linear-gradient(135deg, rgba(229, 193, 133, 0.2), rgba(244, 208, 63, 0.1));
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 24px;
             backdrop-filter: blur(15px);
             border: 1px solid rgba(229, 193, 133, 0.3);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.7);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-            margin-top: 2rem;
+            margin-top: 4rem;
         }
 
-        /* Stats Section */
         .stats {
             padding: 8rem 5%;
             display: grid;
@@ -185,144 +215,25 @@
 
         .stat-item h2 {
             font-size: 3.5rem;
-            font-weight: 900;
             background: linear-gradient(135deg, #e5c185, #f4d03f);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
             margin-bottom: 0.5rem;
         }
 
-        .stat-item p {
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        /* Faculty Section - 4 Images */
-        .faculty-section {
-            padding: 8rem 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .faculty-section h2 {
-            font-size: 3rem;
-            background: linear-gradient(135deg, #e5c185, #f4d03f);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 4rem;
-        }
-
-        .faculty-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .faculty-card {
-            background: rgba(10, 10, 10, 0.4);
+        .faculty-section, .results-section { padding: 8rem 5%; max-width: 1400px; margin: 0 auto; text-align: center; }
+        .faculty-grid, .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .faculty-card, .result-card {
+            background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(229, 193, 133, 0.3);
+            border: 1px solid rgba(229, 193, 133, 0.2);
             border-radius: 24px;
             padding: 2rem;
-            transition: all 0.4s ease;
         }
 
-        .faculty-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(229, 193, 133, 0.6);
-        }
-
-        .faculty-image {
-            width: 120px;
-            height: 120px;
-            border-radius: 20px;
-            background: linear-gradient(135deg, rgba(229, 193, 133, 0.3), rgba(244, 208, 63, 0.2));
-            border: 2px solid rgba(229, 193, 133, 0.5);
-            margin: 0 auto 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .faculty-card h3 {
-            color: #e5c185;
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Results Section - 4 Images */
-        .results-section {
-            padding: 8rem 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-            text-align: center;
-            background: rgba(10, 10, 10, 0.2);
-        }
-
-        .results-section h2 {
-            font-size: 3rem;
-            background: linear-gradient(135deg, #e5c185, #f4d03f);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 4rem;
-        }
-
-        .results-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .result-card {
-            background: rgba(10, 10, 10, 0.4);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(229, 193, 133, 0.3);
-            border-radius: 24px;
-            padding: 2rem;
-            transition: all 0.4s ease;
-        }
-
-        .result-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(229, 193, 133, 0.6);
-        }
-
-        .result-image {
-            width: 100%;
-            height: 180px;
-            background: linear-gradient(135deg, rgba(229, 193, 133, 0.25), rgba(244, 208, 63, 0.15));
-            border-radius: 16px;
-            border: 1px solid rgba(229, 193, 133, 0.4);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 1rem;
-        }
-
-        .result-card h3 {
-            color: #e5c185;
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Location Section */
-        .location-section {
-            padding: 8rem 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
+        .location-section { padding: 8rem 5%; max-width: 1200px; margin: 0 auto; }
         .location-container {
-            background: rgba(10, 10, 10, 0.4);
+            background: rgba(10, 10, 10, 0.6);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(229, 193, 133, 0.3);
             border-radius: 24px;
@@ -330,109 +241,21 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
-            align-items: center;
         }
 
-        .location-info h2 {
-            font-size: 2.5rem;
-            color: #e5c185;
-            margin-bottom: 1.5rem;
-        }
+        .footer { padding: 4rem 5% 2rem; text-align: center; border-top: 1px solid rgba(229, 193, 133, 0.2); }
 
-        .location-info p {
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 2rem;
-        }
-
-        .maps-button {
-            background: linear-gradient(135deg, #e5c185, #f4d03f);
-            color: #0a0a0a;
-            padding: 1rem 2.5rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 15px 30px rgba(229, 193, 133, 0.4);
-        }
-
-        .maps-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 20px 40px rgba(229, 193, 133, 0.6);
-        }
-
-        .maps-placeholder {
-            height: 250px;
-            background: linear-gradient(135deg, rgba(229, 193, 133, 0.2), rgba(244, 208, 63, 0.1));
-            border-radius: 16px;
-            border: 2px solid rgba(229, 193, 133, 0.4);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        /* Footer */
-        .footer {
-            padding: 4rem 5% 2rem;
-            text-align: center;
-            border-top: 1px solid rgba(229, 193, 133, 0.2);
-            margin-top: 4rem;
-        }
-
-        .footer p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 1rem;
-        }
-
-        /* Responsive */
         @media (max-width: 768px) {
-            .navbar {
-                padding: 1rem 3%;
-            }
-            
-            .nav-links {
-                gap: 1.5rem;
-            }
-            
-            .hero {
-                padding: 10rem 3% 0 3%;
-            }
-
-            .stats {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
-                padding: 4rem 3%;
-            }
-
-            .faculty-grid, .results-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .location-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                padding: 3rem 2rem;
-            }
-
-            .whatsapp-btn {
-                bottom: 1.5rem;
-                right: 1.5rem;
-                width: 55px;
-                height: 55px;
-            }
+            .location-container { grid-template-columns: 1fr; }
+            .faculty-grid, .results-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <!-- PLACEHOLDER FOR SHOOTING STAR BACKGROUND INTEGRATION -->
-    
-    <!-- Floating Glassmorphism Navbar -->
+    <!-- INTEGRATED BACKGROUND -->
+    <div class="container"></div>
+
+    <!-- Floating Navbar -->
     <nav class="navbar">
         <div class="logo">DP</div>
         <ul class="nav-links">
@@ -450,8 +273,12 @@
     <section class="hero" id="home">
         <h1>Conquer 100/100</h1>
         <p class="subtitle">Join Digital Pathshala's proven coaching system that has consistently delivered top ranks and perfect scores for serious aspirants.</p>
-        <a href="#location" class="cta-button">Start Your Journey</a>
-        <!-- Hero/Coaching Image Slot 1 -->
+        
+        <!-- INTEGRATED HERO BUTTON -->
+        <div class="wrapper">
+            <a href="#location" class="button">Start Your Journey</a>
+        </div>
+
         <div class="hero-image">
             Coaching Institute Building Image Placeholder
         </div>
@@ -477,59 +304,35 @@
         </div>
     </section>
 
-    <!-- Faculty Section - 4 Clean Image Slots -->
+    <!-- Faculty Section -->
     <section class="faculty-section" id="faculty">
         <h2>Our Expert Faculty</h2>
         <div class="faculty-grid">
-            <div class="faculty-card">
-                <div class="faculty-image">Faculty Image 1</div>
-                <h3>Faculty Member 1</h3>
-            </div>
-            <div class="faculty-card">
-                <div class="faculty-image">Faculty Image 2</div>
-                <h3>Faculty Member 2</h3>
-            </div>
-            <div class="faculty-card">
-                <div class="faculty-image">Faculty Image 3</div>
-                <h3>Faculty Member 3</h3>
-            </div>
-            <div class="faculty-card">
-                <div class="faculty-image">Faculty Image 4</div>
-                <h3>Faculty Member 4</h3>
-            </div>
+            <div class="faculty-card"><div class="faculty-image">Faculty 1</div><h3>Member 1</h3></div>
+            <div class="faculty-card"><div class="faculty-image">Faculty 2</div><h3>Member 2</h3></div>
+            <div class="faculty-card"><div class="faculty-image">Faculty 3</div><h3>Member 3</h3></div>
+            <div class="faculty-card"><div class="faculty-image">Faculty 4</div><h3>Member 4</h3></div>
         </div>
     </section>
 
-    <!-- Results Section - 4 Clean Image Slots -->
+    <!-- Results Section -->
     <section class="results-section" id="results">
-        <h2>Our Top Results🎓</h2>
+        <h2>Our Top Results 🎓</h2>
         <div class="results-grid">
-            <div class="result-card">
-                <div class="result-image">Result Image 1</div>
-                <h3>Topper 1</h3>
-            </div>
-            <div class="result-card">
-                <div class="result-image">Result Image 2</div>
-                <h3>Topper 2</h3>
-            </div>
-            <div class="result-card">
-                <div class="result-image">Result Image 3</div>
-                <h3>Topper 3</h3>
-            </div>
-            <div class="result-card">
-                <div class="result-image">Result Image 4</div>
-                <h3>Topper 4</h3>
-            </div>
+            <div class="result-card"><div class="result-image">Result 1</div><h3>Topper 1</h3></div>
+            <div class="result-card"><div class="result-image">Result 2</div><h3>Topper 2</h3></div>
+            <div class="result-card"><div class="result-image">Result 3</div><h3>Topper 3</h3></div>
+            <div class="result-card"><div class="result-image">Result 4</div><h3>Topper 4</h3></div>
         </div>
     </section>
 
-    <!-- Location Section with Google Maps -->
+    <!-- Location Section -->
     <section class="location-section" id="location">
         <div class="location-container">
             <div class="location-info">
                 <h2>Visit Us</h2>
-                <p>Address</p>
-                <a href="https://maps.google.com" target="_blank" class="maps-button">
+                <p>Digital Pathshala Main Campus</p>
+                <a href="https://maps.google.com" target="_blank" class="button" style="background: #f4d03f; color: #000; border-radius: 50px; padding: 0.8rem 2rem;">
                     📍 View on Google Maps
                 </a>
             </div>
@@ -539,9 +342,8 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2024 Digital Pathshala. Conquer 100/100 with the best coaching institute. All rights reserved.</p>
+        <p>&copy; 2026 Digital Pathshala. All rights reserved.</p>
     </footer>
 </body>
 </html>
