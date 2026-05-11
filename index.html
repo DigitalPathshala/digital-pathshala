@@ -154,14 +154,23 @@
         .brand-name {
             font-size: 3.5rem;
             font-weight: 800;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-            color: #ffffff; /* This makes 'Digital' white */
+            margin-top: 15px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            /* This makes Digital look like silver/white gold */
+            background: linear-gradient(to bottom, #ffffff 30%, #cccccc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            /* This is the GLOW */
+            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.3));
         }
 
         .brand-name span {
-            color: #9c0e89; /* This makes 'Pathshala' Purple */
+            /* This is a vibrant Purple with its own neon glow */
+            background: linear-gradient(to bottom, #d633ff, #9c0e89);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 20px rgba(156, 14, 137, 0.8));
         }
 
         /* --- HERO SECTION --- */
