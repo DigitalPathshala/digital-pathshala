@@ -13,17 +13,17 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #000; /* Set to black for the star background */
+            background: #000;
             color: #ffffff;
             overflow-x: hidden;
             line-height: 1.7;
         }
 
-        /* --- INTEGRATED BACKGROUND CODE --- */
+        /* --- BACKGROUND ANIMATION --- */
         .container {
-            position: fixed; /* Changed to fixed so it stays behind content */
+            position: fixed;
             inset: 0;
-            z-index: -1; /* Keep it behind everything */
+            z-index: -1;
             overflow: hidden;
             background: #000;
         }
@@ -79,18 +79,19 @@
             to { background-position: 0px 6800px, 3px 6800px, 151.5px 6917.5px, 25px 13632px, 28px 13632px, 176.5px 13758px, 50px 5416px, 53px 5416px, 201.5px 5491px, 75px 17175px, 78px 17175px, 226.5px 17301.5px, 100px 5119px, 103px 5119px, 251.5px 5221px, 125px 8428px, 128px 8428px, 276.5px 8495px, 150px 9876px, 153px 9876px, 301.5px 9965.5px, 175px 13391px, 178px 13391px, 326.5px 13540.5px, 200px 14741px, 203px 14741px, 351.5px 14848.5px, 225px 18770px, 228px 18770px, 376.5px 18910.5px, 250px 5082px, 253px 5082px, 401.5px 5161px, 275px 6375px, 278px 6375px, 426.5px 6480px; }
         }
 
-        /* --- INTEGRATED HERO BUTTON CODE --- */
+        /* --- STYLED HERO BUTTON --- */
         .wrapper {
             display: inline-block;
             border-radius: 48px;
             box-shadow: inset 12px 0 12px rgba(255, 255, 255, 0.25), inset -2px -4px 8px rgba(255, 255, 255, 0.25);
             background: linear-gradient(336deg, rgba(255, 196, 32, 1) 0%, rgba(254, 75, 8, 1) 39%, rgba(254, 75, 8, 1) 57%, rgba(255, 196, 32, 1) 100%);
             transition: transform 0.2s;
+            margin-bottom: 2rem;
         }
 
         .button {
             cursor: pointer;
-            padding: 0.75rem 2.5rem; /* adjusted padding for your layout */
+            padding: 0.75rem 2.5rem;
             border-radius: inherit;
             font-weight: 600;
             font-size: 1.1rem;
@@ -117,97 +118,88 @@
 
         .button:hover::before { filter: blur(0); opacity: 0; }
         .wrapper:active { transform: scale(0.95); }
-        .button:focus { outline: 2px solid #fff; outline-offset: 4px; }
 
-        /* --- EXISTING UI STYLES --- */
+        /* --- RESTORED TOP-RIGHT NAV --- */
         .navbar {
             position: fixed;
             top: 0; left: 0; right: 0;
             padding: 1rem 5%;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            justify-content: flex-end; /* Links to the right */
             backdrop-filter: blur(25px);
-            background: rgba(10, 10, 10, 0.7); /* Darkened for visibility */
-            border-bottom: 1px solid rgba(229, 193, 133, 0.3);
+            background: rgba(10, 10, 10, 0.5);
+            border-bottom: 1px solid rgba(229, 193, 133, 0.2);
             z-index: 1000;
         }
 
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 800;
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-links a { color: #ffffff; text-decoration: none; font-weight: 500; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
+        .nav-links a:hover { color: #e5c185; }
+
+        /* --- BIG CENTERED LOGO BELOW NAV --- */
+        .main-logo-container {
+            margin-top: 6rem;
+            text-align: center;
+        }
+
+        .logo-text {
+            font-size: 6rem; /* Huge impact logo */
+            font-weight: 900;
             background: linear-gradient(135deg, #e5c185, #f4d03f);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            letter-spacing: -2px;
         }
 
-        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-        .nav-links a { color: #ffffff; text-decoration: none; font-weight: 500; position: relative; transition: color 0.3s ease; }
-        .nav-links a:hover { color: #e5c185; }
-
-        .whatsapp-btn {
-            position: fixed;
-            bottom: 2rem; right: 2rem;
-            width: 60px; height: 60px;
-            background: #25D366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
-            z-index: 999;
-            text-decoration: none;
-        }
-
+        /* --- HERO SECTION --- */
         .hero {
-            min-height: 100vh;
+            min-height: 80vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 12rem 5% 4rem 5%;
-            position: relative;
+            padding: 2rem 5% 4rem 5%;
         }
 
         .hero h1 {
-            font-size: clamp(3.5rem, 8vw, 7rem);
+            font-size: clamp(3rem, 8vw, 7rem);
             font-weight: 900;
             background: linear-gradient(135deg, #e5c185, #f4d03f, #ffffff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .hero .subtitle {
-            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-            color: rgba(255, 255, 255, 0.9);
+            font-size: clamp(1rem, 2vw, 1.4rem);
+            color: rgba(255, 255, 255, 0.7);
             max-width: 700px;
             margin-bottom: 3rem;
         }
 
         .hero-image {
             width: 100%;
-            max-width: 800px;
-            height: 400px;
+            max-width: 900px;
+            height: 450px;
             background: rgba(255, 255, 255, 0.05);
-            border-radius: 24px;
+            border-radius: 30px;
             backdrop-filter: blur(15px);
-            border: 1px solid rgba(229, 193, 133, 0.3);
+            border: 1px solid rgba(229, 193, 133, 0.2);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: 4rem;
+            margin-top: 2rem;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.5);
         }
 
+        /* --- STATS SECTION --- */
         .stats {
-            padding: 8rem 5%;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
+            padding: 6rem 5%;
+            display: flex;
+            justify-content: center;
+            gap: 5rem;
             max-width: 1200px;
             margin: 0 auto;
             text-align: center;
@@ -218,22 +210,12 @@
             background: linear-gradient(135deg, #e5c185, #f4d03f);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 0.5rem;
         }
 
-        .faculty-section, .results-section { padding: 8rem 5%; max-width: 1400px; margin: 0 auto; text-align: center; }
-        .faculty-grid, .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-        .faculty-card, .result-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(229, 193, 133, 0.2);
-            border-radius: 24px;
-            padding: 2rem;
-        }
-
-        .location-section { padding: 8rem 5%; max-width: 1200px; margin: 0 auto; }
+        /* --- LOCATION SECTION --- */
+        .location-section { padding: 8rem 5%; max-width: 1200px; margin: 0 auto; text-align: center; }
         .location-container {
-            background: rgba(10, 10, 10, 0.6);
+            background: rgba(10, 10, 10, 0.4);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(229, 193, 133, 0.3);
             border-radius: 24px;
@@ -241,23 +223,40 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
+            align-items: center;
         }
 
-        .footer { padding: 4rem 5% 2rem; text-align: center; border-top: 1px solid rgba(229, 193, 133, 0.2); }
+        .location-info h2 { font-size: 2.5rem; color: #e5c185; margin-bottom: 1.5rem; }
+        .maps-placeholder {
+            height: 300px;
+            background: linear-gradient(135deg, rgba(229, 193, 133, 0.1), rgba(244, 208, 63, 0.05));
+            border-radius: 16px;
+            border: 2px solid rgba(229, 193, 133, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* --- OTHER SECTIONS --- */
+        .faculty-section, .results-section { padding: 6rem 5%; max-width: 1400px; margin: 0 auto; text-align: center; }
+        .faculty-grid, .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .faculty-card, .result-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(229, 193, 133, 0.2); border-radius: 24px; padding: 2rem; }
+
+        .whatsapp-btn { position: fixed; bottom: 2rem; right: 2rem; width: 60px; height: 60px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; z-index: 999; text-decoration: none; box-shadow: 0 10px 30px rgba(37,211,102,0.4); }
+        .footer { padding: 4rem 5%; text-align: center; border-top: 1px solid rgba(229, 193, 133, 0.1); }
 
         @media (max-width: 768px) {
-            .location-container { grid-template-columns: 1fr; }
-            .faculty-grid, .results-grid { grid-template-columns: 1fr; }
+            .stats, .location-container { grid-template-columns: 1fr; flex-direction: column; }
+            .navbar { justify-content: center; }
+            .logo-text { font-size: 4rem; }
         }
     </style>
 </head>
 <body>
-    <!-- INTEGRATED BACKGROUND -->
     <div class="container"></div>
 
-    <!-- Floating Navbar -->
+    <!-- OG Navbar (Links Top Right) -->
     <nav class="navbar">
-        <div class="logo">DP</div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#faculty">Faculty</a></li>
@@ -266,15 +265,19 @@
         </ul>
     </nav>
 
-    <!-- WhatsApp Floating Button -->
+    <!-- Main Big Logo Centered Beneath Navbar -->
+    <div class="main-logo-container">
+        <div class="logo-text">DP</div>
+    </div>
+
+    <!-- WhatsApp Button -->
     <a href="https://wa.me/YOUR-NUMBER" class="whatsapp-btn" target="_blank">💬</a>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <h1>Conquer 100/100</h1>
         <p class="subtitle">Join Digital Pathshala's proven coaching system that has consistently delivered top ranks and perfect scores for serious aspirants.</p>
         
-        <!-- INTEGRATED HERO BUTTON -->
+        <!-- Hero Button -->
         <div class="wrapper">
             <a href="#location" class="button">Start Your Journey</a>
         </div>
@@ -284,11 +287,11 @@
         </div>
     </section>
 
-    <!-- Stats Section -->
+    <!-- Stats -->
     <section class="stats">
         <div class="stat-item">
-            <h2>500+</h2>
-            <p>100/100 Scorers</p>
+            <h2>300+</h2>
+            <p>Happy Students</p>
         </div>
         <div class="stat-item">
             <h2>15+</h2>
@@ -298,35 +301,31 @@
             <h2>98%</h2>
             <p>Success Rate</p>
         </div>
-        <div class="stat-item">
-            <h2>10,000+</h2>
-            <p>Happy Students</p>
-        </div>
     </section>
 
-    <!-- Faculty Section -->
+    <!-- Faculty -->
     <section class="faculty-section" id="faculty">
         <h2>Our Expert Faculty</h2>
         <div class="faculty-grid">
-            <div class="faculty-card"><div class="faculty-image">Faculty 1</div><h3>Member 1</h3></div>
-            <div class="faculty-card"><div class="faculty-image">Faculty 2</div><h3>Member 2</h3></div>
-            <div class="faculty-card"><div class="faculty-image">Faculty 3</div><h3>Member 3</h3></div>
-            <div class="faculty-card"><div class="faculty-image">Faculty 4</div><h3>Member 4</h3></div>
+            <div class="faculty-card"><div class="faculty-image" style="height:150px; background:rgba(255,255,255,0.05); border-radius:15px; display:flex; align-items:center; justify-content:center; margin-bottom:1rem;">Faculty 1</div><h3>Member 1</h3></div>
+            <div class="faculty-card"><div class="faculty-image" style="height:150px; background:rgba(255,255,255,0.05); border-radius:15px; display:flex; align-items:center; justify-content:center; margin-bottom:1rem;">Faculty 2</div><h3>Member 2</h3></div>
+            <div class="faculty-card"><div class="faculty-image" style="height:150px; background:rgba(255,255,255,0.05); border-radius:15px; display:flex; align-items:center; justify-content:center; margin-bottom:1rem;">Faculty 3</div><h3>Member 3</h3></div>
+            <div class="faculty-card"><div class="faculty-image" style="height:150px; background:rgba(255,255,255,0.05); border-radius:15px; display:flex; align-items:center; justify-content:center; margin-bottom:1rem;">Faculty 4</div><h3>Member 4</h3></div>
         </div>
     </section>
 
-    <!-- Results Section -->
+    <!-- Results -->
     <section class="results-section" id="results">
         <h2>Our Top Results 🎓</h2>
         <div class="results-grid">
-            <div class="result-card"><div class="result-image">Result 1</div><h3>Topper 1</h3></div>
-            <div class="result-card"><div class="result-image">Result 2</div><h3>Topper 2</h3></div>
-            <div class="result-card"><div class="result-image">Result 3</div><h3>Topper 3</h3></div>
-            <div class="result-card"><div class="result-image">Result 4</div><h3>Topper 4</h3></div>
+            <div class="result-card"><div class="result-image" style="height:200px; background:rgba(255,255,255,0.05); border-radius:15px; display:flex; align-items:center; justify-content:center; margin-bottom:1rem;">Result 1</div><h3>Topper 1</h3></div>
+            <div class="result-card"><div class="result-image" style="height:200px; background:rgba(255,255,255,0.05); border-radius:15px; display:flex; align-items:center; justify-content:center; margin-bottom:1rem;">Result 2</div><h3>Topper 2</h3></div>
+            <div class="result-card"><div class="result-image" style="height:200px; background:rgba(255,255,255,0.05); border-radius:15px; display:flex; align-items:center; justify-content:center; margin-bottom:1rem;">Result 3</div><h3>Topper 3</h3></div>
+            <div class="result-card"><div class="result-image" style="height:200px; background:rgba(255,255,255,0.05); border-radius:15px; display:flex; align-items:center; justify-content:center; margin-bottom:1rem;">Result 4</div><h3>Topper 4</h3></div>
         </div>
     </section>
 
-    <!-- Location Section -->
+    <!-- Restored Location Section -->
     <section class="location-section" id="location">
         <div class="location-container">
             <div class="location-info">
